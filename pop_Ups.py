@@ -5,7 +5,7 @@ import time
 
 
 
-class PopUpAlerts(unittest.TestCase):
+class PopUpAlerts(unittest.TestCase):#/Users/macbookpro/PycharmProjects/GmailProject/POMFile/driver/chromedriver 2
     @classmethod
     def setUpClass(cls):
         cls.driver = webdriver.Chrome(executable_path="/Users/macbookpro/PycharmProjects/GmailProject/POMFile/driver/chromedriver 2")
@@ -17,12 +17,18 @@ class PopUpAlerts(unittest.TestCase):
         self.driver.find_element_by_xpath("//a[text()='Sign in']").click()
         self.driver.find_element_by_xpath("//input[@name='proceed']").click()
 
-        time.sleep(4)
+        time.sleep(2)
         self.driver.switch_to_alert().accept()
-    @classmethod
-    def test_tearDownClass(cls):
-       #cls.driver.close()
-        #cls.driver.quit()
+        time.sleep(2)
+        self.driver.back()
+        time.sleep(2)
+        self.driver.back()
+        time.sleep(2)
+        self.driver.forward()
+    #@classmethod
+    # def test_tearDownClass(cls):
+    #     cls.driver.close()
+    #     cls.driver.quit()
 
 
 if __name__=="__main__":
